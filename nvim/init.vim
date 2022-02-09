@@ -1,6 +1,6 @@
 filetype plugin indent on
 
-let $MYVIMRC = '~/dotfiles/.vimrc'
+let $MYVIMRC = '~/.config/nvim/init.vim'
 let mapleader=','
 
 call plug#begin('~/.vim/plugged')
