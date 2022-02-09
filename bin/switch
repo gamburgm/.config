@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# requires that $MYVIMRC is set properly in .bashrc
+if rg -q 'background=dark' ${MYVIMRC}; then
+  sed -i s/background=dark\ /background=light/ ${MYVIMRC}
+  sed -i s/*dark/*light/ ~/.config/alacritty/alacritty.yml
+else
+  sed -i s/background=light/background=dark\ / ${MYVIMRC}
+  sed -i s/*light/*dark/ ~/.config/alacritty/alacritty.yml
+fi
