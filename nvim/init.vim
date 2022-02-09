@@ -3,7 +3,7 @@ filetype plugin indent on
 let $MYVIMRC = '~/.config/nvim/init.vim'
 let mapleader=','
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/autoload/plugged')
 
 Plug 'lifepillar/vim-solarized8'    " colorscheme
 Plug 'ctrlpvim/ctrlp.vim'           " fuzzy file search
@@ -129,7 +129,7 @@ if has('termguicolors')
   set termguicolors
 endif
 
-set background=dark	    " dark colorscheme
+set background=dark     " dark colorscheme
 colorscheme solarized8  " solarized colorscheme
 
 set incsearch			" search as characters are entered
