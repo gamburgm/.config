@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
-# requires that $MYVIMRC is set properly in .bashrc
+# requires that $MYVIMRC and $WSL_CONFIG (if it exists) is set properly in .bashrc
 if rg -q 'background=dark' ${MYVIMRC}; then
   sed -i s/background=dark\ /background=light/ ${MYVIMRC}
   sed -i s/*dark/*light/ ~/.config/alacritty/alacritty.yml
+  [[ -f "$WSL_CONFIG" ]] && sed -i "0,/Solarized Dark/s//Solarized Light/" "$WSL_CONFIG"
+
 else
   sed -i s/background=light/background=dark\ / ${MYVIMRC}
   sed -i s/*light/*dark/ ~/.config/alacritty/alacritty.yml
+  [[ -f "$WSL_CONFIG" ]] && sed -i "0,/Solarized Light/s//Solarized Dark/" "$WSL_CONFIG"
 fi
