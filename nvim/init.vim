@@ -116,6 +116,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
 
+nnoremap <leader>vv :e $MYVIMRC<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>pv :PlugInstall<CR>
@@ -129,7 +130,7 @@ if has('termguicolors')
   set termguicolors
 endif
 
-set background=dark     " dark colorscheme
+set background=light    " dark colorscheme
 colorscheme solarized8  " solarized colorscheme
 
 set incsearch			" search as characters are entered
@@ -160,6 +161,11 @@ augroup file_templates
   autocmd!
   autocmd BufNewFile *.rkt 0r ~/.config/nvim/racket.temp.rkt
   autocmd BufNewFile *.sh  0r ~/.config/nvim/bash.temp.sh
+augroup END
+
+augroup embryo
+  autocmd!
+  autocmd BufNewFile,BufRead,BufWrite *.emb set filetype=racket
 augroup END
 
 " would be cool to have an abbreviation that expands if to if..else..end in
