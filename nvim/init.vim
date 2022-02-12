@@ -168,6 +168,11 @@ augroup embryo
   autocmd BufNewFile,BufRead,BufWrite *.emb set filetype=racket
 augroup END
 
+augroup asm
+  autocmd!
+  autocmd BufNewFile,BufRead,BufWrite *.asm set filetype=asm
+augroup END
+
 " would be cool to have an abbreviation that expands if to if..else..end in
 " elixir
 
