@@ -137,7 +137,7 @@ if has('termguicolors')
   set termguicolors
 endif
 
-set background=light    " dark colorscheme
+set background=dark     " dark colorscheme
 colorscheme solarized8  " solarized colorscheme
 
 set incsearch			" search as characters are entered
@@ -243,3 +243,24 @@ endif
 " Terminal config
 tnoremap <Esc> <C-\><C-N>
 tnoremap <C-W> <Esc><C-W>
+
+" VimTeX config
+" TODO what is forward search? is this latex jargon?
+" FIXME hack: I move SumatraPDF.exe to SumatraPDF somewhere that my $PATH includes
+if (has('unix') && exists('$WSLENV'))
+  let g:vimtex_view_general_viewer = 'SumatraPDF'
+  let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
+endif
+
+let g:vimtex_compiler_latexmk = {
+  \ 'options': [
+  \ '-verbose',
+  \ '-file-line-error',
+  \ '-synctex=1',
+  \ '-interaction=nonstopmode',
+  \ '--shell-escape',
+  \ ],
+  \ }
+
+let g:vimtex_compiler_latexmk_engines = { '_': '-xelatex' }
+let g:vimtex_quickfix_open_on_warning = 0
