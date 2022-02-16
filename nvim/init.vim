@@ -19,10 +19,17 @@ Plug '~/vim-racket'                 " For racket
 " Plug 'rachitnigam/drracket.vim'     " For Dr.Racket Arrows -> It doesn't work very well, kinda want to clone and modify
 Plug 'neovim/nvim-lspconfig'        " For built-in NeoVim LSP client
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'lervag/vimtex'
 " Plug 'kovisoft/slimv'
 " Plug 'vim-scripts/paredit.vim'      " For working with Lisps
 
 call plug#end()
+
+" TODO for latex:
+" - VimTex additional plugins and setup (linting, surrounds, formatting, LSP,
+"   etc
+" - figure out good mappings & commands (snippets?)
+" - read the VimTex docs and squeeze as much value as possible
 
 " language server setup
 " would love to add racket but can't currently
@@ -130,7 +137,7 @@ if has('termguicolors')
   set termguicolors
 endif
 
-set background=dark     " dark colorscheme
+set background=light    " dark colorscheme
 colorscheme solarized8  " solarized colorscheme
 
 set incsearch			" search as characters are entered

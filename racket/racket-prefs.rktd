@@ -1,6 +1,15 @@
 (
  (readline-input-history
   (
+   #"(phase1-eval         (remove-unused-vars/rel\n            (generate-prog\n            (ir-rel ((~binders a))\n              (fresh ((~binders x y))\n                (== (#%lv-ref x) (#%lv-ref a)))))))"
+   #"(require (for-syntax \"unit-test-infra.rkt\" \"private/compile/remove-unused-vars.rkt\"))"
+   #"(require \"private/compile/remove-unused-vars.rkt\")"
+   #"(phase1-eval (define prog (generate-prog (ir-rel ((~binders a))\n              (fresh ((~binders x y))\n                (== (#%lv-ref x) (#%lv-ref a))))))\n    (displayln prog)\n    (displayln (remove-unused-vars/rel prog)))"
+   #"(require syntax/macro-testing)"
+   #"(require \"private/syntax-classes.rkt\")"
+   #"(require (for-syntax racket/base))"
+   #"(require \"private/forms.rkt\")"
+   #"(require \"unit-test-infra.rkt\")"
    #"(hash-ref x 5 #f)"
    #"(hash-ref x 5)"
    #"(define x (hash))"
@@ -89,17 +98,5 @@
    #"(lex '(lambda (y) (lambda (x) (x y))) '())"
    #"(lex '(lambda (y) (lambda (x) y)) '())"
    #"(lex `(lambda (x) x) '())"
-   #"(define (list-index-ofv sym ls)\n    (cond\n      [(empty? ls) (error \"fuck\")]\n      [(cons? ls)\n       (if (eqv? (car ls) sym)\n         0\n         (+ 1 (list-index-ofv sym (cdr ls))))]))"
-   #"(define (lex expr acc)\n    (match expr\n      [_ #:when (symbol? expr) `(var ,(list-index-ofv expr acc))]\n      [`(lambda (,p) ,b) `(lambda ,(lex b (cons p acc)))]\n      [`(,op ,rand) `(,(lex op acc) (lex rand acc))]))"
-   #"(check-true* set=?\n    [(unique-free-vars 'x) '(x)]\n    [(unique-free-vars '(lambda (x) (x y))) '(y)]\n    [(unique-free-vars '((lambda (x) ((x y) e)) (lambda (c) (x (lambda (x) (x (e c))))))) '(y e x)])"
-   #"(unique-free-vars '((lambda (x) ((x y) e)) (lambda (c) (x (lambda (x) (x (e c)))))))"
-   #"(check-true* equal? \n    [(unique-free-vars 'x) '(x)]\n    [(unique-free-vars '(lambda (x) (x y))) '(y)]\n    [(unique-free-vars '((lambda (x) ((x y) e)) (lambda (c) (x (lambda (x) (x (e c))))))) '(y e x)])"
-   #"(define (unique-free-vars expr)\n    (match expr\n      [_ #:when (symbol? expr) (list expr)]\n      [`(lambda (,p) ,b) (remv p (unique-free-vars b))]\n      [`(,op ,rand) (union (unique-free-vars op) (unique-free-vars rand))]))"
-   #"(check-true* equal? \n    [(var-occurs-bound? 'x 'x) '#f]\n    [(var-occurs-bound? 'x '(lambda (x) x)) '#t]\n    [(var-occurs-bound? 'y '(lambda (x) x)) '#f]\n    [(var-occurs-bound? 'x '((lambda (x) (x x)) (x x))) '#t]\n    [(var-occurs-bound? 'z '(lambda (y) (lambda (x) (y z)))) '#f]\n    [(var-occurs-bound? 'z '(lambda (y) (lambda (z) (y z)))) '#t]\n    [(var-occurs-bound? 'x '(lambda (x) y)) '#f]\n    [(var-occurs-bound? 'x '(lambda (x) (lambda (x) x))) '#t])"
-   #"(\n  )"
-   #"(define (var-occurs-bound? id expr)\n    (match expr\n      [_ #:when (symbol? expr) #f]\n      [`(lambda (,p) ,b) (if (eqv? id p) (var-occurs? id b) (var-occurs-bound? id b))]\n      [`(,op ,rand) (or (var-occurs-bound? id op) (var-occurs-bound? id rand))]))"
-   #"(var-occurs-bound? 'z '(lambda (z) (y z)))"
-   #"(var-occurs-bound? `(lambda (y) z))"
-   #"(var-occurs-bound? 'z `(lambda (y) y))"
   ))
 )
