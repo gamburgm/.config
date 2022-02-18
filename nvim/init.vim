@@ -78,7 +78,23 @@ lspconfig.ocamllsp.setup{
 
 -- Treesitter (I really need to migrate some stuff to a separate init.lua or something, I hate this)
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'javascript', 'ocaml' },
+  ensure_installed = {
+    'bash',
+    'bibtex',
+    'c',
+    'javascript',
+    'json',
+    'latex',
+    'make',
+    'markdown',
+    'ocaml',
+    'ocamllex',
+    'python',
+    'query',
+    'tsx',
+    'typescript',
+    'vim',
+  },
   sync_install = false,
   highlight = {
     enable = true,
