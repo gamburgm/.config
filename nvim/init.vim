@@ -75,6 +75,16 @@ lspconfig.ocamllsp.setup{
     debounce_text_changes = 150,
   }
 }
+
+-- Treesitter (I really need to migrate some stuff to a separate init.lua or something, I hate this)
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { 'javascript' },
+  sync_install = false,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
 EOF
 
 set exrc				    " allow for directory-specific vimrc's
