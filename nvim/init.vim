@@ -247,9 +247,11 @@ tnoremap <C-W> <Esc><C-W>
 " VimTeX config
 " TODO what is forward search? is this latex jargon?
 " FIXME hack: I move SumatraPDF.exe to SumatraPDF somewhere that my $PATH includes
-if (has('unix') && exists('$WSLENV'))
+if (has('wsl') && executable('SumatraPDF'))
   let g:vimtex_view_general_viewer = 'SumatraPDF'
   let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
+elseif (has('unix') && executable('zathura'))
+  let g:vimtex_view_method = 'zathura'
 endif
 
 let g:vimtex_compiler_latexmk = {

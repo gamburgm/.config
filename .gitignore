@@ -1,3 +1,12 @@
-configstore/
-wslu/
+*
+
+# things I want to keep
+!nvim/
 nvim/autoload/
+
+!tmux/
+!alacritty/
+!latexmk/
+!bin/
+!racket/
+!neofetch/
