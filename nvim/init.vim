@@ -114,7 +114,7 @@ set signcolumn=yes  " pre-load the column for coc warnings so that you don't hav
 
 noremap <C-N> :NERDTreeToggle<CR>
 noremap <C-F> :NERDTreeFind<CR>
-nnoremap <leader>f :NERDTreeFocus<CR>
+nnoremap <leader>t :NERDTreeFocus<CR>
 
 " navigate splits more easily
 nnoremap <C-H> <C-W><C-H>
