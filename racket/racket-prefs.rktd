@@ -1,6 +1,9 @@
 (
  (readline-input-history
   (
+   #"(letrec ([f (lambda (x) (if (h (g x)) (add1 x) (sub1 x)))]\n           [g (lambda (y) (let ([x 5]) (h 5) (if (zero? x) y (g (sub1 y)))))]\n           [h (lambda (z) #t)])\n    (f 5))"
+   #"(letrec\n  )"
+   #"letrec"
    #"(phase1-eval         (remove-unused-vars/rel\n            (generate-prog\n            (ir-rel ((~binders a))\n              (fresh ((~binders x y))\n                (== (#%lv-ref x) (#%lv-ref a)))))))"
    #"(require (for-syntax \"unit-test-infra.rkt\" \"private/compile/remove-unused-vars.rkt\"))"
    #"(require \"private/compile/remove-unused-vars.rkt\")"
@@ -95,8 +98,5 @@
    #"(define (walk-symbol-update x s)\n    (let ([a (assv x s)])\n      (cond\n        [a\n         (let ([res (walk-symbol-update (unbox (cdr a)) s)])\n           (set-box! (cdr a) res)\n           res)]\n        [else x])))"
    #"(check-true* equal? \n    [(lex '(lambda (x) x) '())\n     '(lambda (var 0))]\n    [(lex '(lambda (y) (lambda (x) y)) '())\n     '(lambda (lambda (var 1)))]\n    [(lex '(lambda (y) (lambda (x) (x y))) '())\n     '(lambda (lambda ((var 0) (var 1))))]\n    [(lex '(lambda (x) (lambda (x) (x x))) '())\n     '(lambda (lambda ((var 0) (var 0))))]\n    [(lex '(lambda (y) ((lambda (x) (x y)) (lambda (c) (lambda (d) (y c))))) '()) \n     '(lambda ((lambda ((var 0) (var 1))) (lambda (lambda ((var 2) (var 1))))))]\n    [(lex '(lambda (a)\n             (lambda (b)\n               (lambda (c)\n                 (lambda (a)\n                   (lambda (b)\n                     (lambda (d)\n                       (lambda (a)\n                         (lambda (e)\n                           (((((a b) c) d) e) a))))))))) '())\n     '(lambda\n        (lambda\n          (lambda\n            (lambda\n              (lambda\n                (lambda\n                  (lambda\n                    (lambda\n                      ((((((var 1) (var 3)) (var 5)) (var 2)) (var 0)) (var 1))))))))))]\n    [(lex '(lambda (a)\n             (lambda (b)\n               (lambda (c)\n                 (lambda (w)\n                   (lambda (x)\n                     (lambda (y)\n                       ((lambda (a)\n                          (lambda (b)\n                            (lambda (c)\n                              (((((a b) c) w) x) y))))\n                        (lambda (w)\n                          (lambda (x)\n                            (lambda (y)\n                              (((((a b) c) w) x) y))))))))))) '())\n     '(lambda \n        (lambda \n          (lambda \n            (lambda \n              (lambda \n                (lambda \n                  ((lambda\n                     (lambda\n                       (lambda\n                         ((((((var 2) (var 1)) (var 0)) (var 5)) (var 4)) (var 3)))))\n                   (lambda\n                     (lambda\n                       (lambda\n                         ((((((var 8) (var 7)) (var 6)) (var 2)) (var 1)) (var 0))))))))))))])"
    #"(define (lex expr acc)\n    (match expr\n      [_ #:when (symbol? expr) `(var ,(list-index-ofv expr acc))]\n      [`(lambda (,p) ,b) `(lambda ,(lex b (cons p acc)))]\n      [`(,op ,rand) `(,(lex op acc) ,(lex rand acc))]))"
-   #"(lex '(lambda (y) (lambda (x) (x y))) '())"
-   #"(lex '(lambda (y) (lambda (x) y)) '())"
-   #"(lex `(lambda (x) x) '())"
   ))
 )

@@ -5,6 +5,8 @@
 nvim/autoload/
 
 !tmux/
+tmux/local.conf
+
 !alacritty/
 !latexmk/
 !bin/
