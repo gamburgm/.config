@@ -2,6 +2,7 @@ filetype plugin indent on
 
 let $MYVIMRC = '~/.config/nvim/init.vim'
 let mapleader=','
+let maplocalleader="\<space>"
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
@@ -53,6 +54,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<localleader>d', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 end
 
 local default_servers = { 'clangd', 'jedi_language_server', 'tsserver', 'eslint' }
