@@ -270,6 +270,10 @@ endif
 tnoremap <Esc> <C-\><C-N>
 tnoremap <C-W> <Esc><C-W>
 
+nnoremap <leader>tt :terminal<CR>
+nnoremap <leader>vt :vertical terminal<CR>
+nnoremap <leader>st :botright split +terminal<CR>
+
 " VimTeX config
 " TODO what is forward search? is this latex jargon?
 " FIXME hack: I move SumatraPDF.exe to SumatraPDF somewhere that my $PATH includes
