@@ -165,7 +165,7 @@ if has('termguicolors')
   set termguicolors
 endif
 
-set background=light    " dark colorscheme
+set background=dark     " dark colorscheme
 colorscheme solarized8  " solarized colorscheme
 
 set incsearch			" search as characters are entered
