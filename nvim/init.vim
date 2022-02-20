@@ -53,7 +53,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts) FIXME not sure what do
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<localleader>d', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 end
 
@@ -141,7 +141,7 @@ set shortmess+=c    " Don't pass messages to ins-completion-menu
 set signcolumn=yes  " pre-load the column for coc warnings so that you don't have to redraw everything everytime
 
 noremap <C-N> :NERDTreeToggle<CR>
-noremap <C-F> :NERDTreeFind<CR>
+noremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>t :NERDTreeFocus<CR>
 
 " navigate splits more easily
