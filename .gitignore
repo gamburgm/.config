@@ -12,6 +12,7 @@ tmux/local.conf
 !bin/
 !racket/
 !neofetch/
+!bat/
 
 !README.md
 !TODO.md

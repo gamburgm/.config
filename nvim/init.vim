@@ -141,8 +141,8 @@ set shortmess+=c    " Don't pass messages to ins-completion-menu
 set signcolumn=yes  " pre-load the column for coc warnings so that you don't have to redraw everything everytime
 
 noremap <C-N> :NERDTreeToggle<CR>
-noremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>t :NERDTreeFocus<CR>
+noremap <leader>F :NERDTreeFind<CR>
+nnoremap <leader>f :NERDTreeFocus<CR>
 
 " navigate splits more easily
 nnoremap <C-H> <C-W><C-H>
