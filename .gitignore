@@ -16,5 +16,6 @@ tmux/local.conf
 !README.md
 !TODO.md
 
+# very confused as to why bat/config needs to be especially 'unignored' -- same with other directories, really strange
 !bat/
 !bat/config
