@@ -273,8 +273,8 @@ tnoremap <Esc> <C-\><C-N>
 tnoremap <C-W> <Esc><C-W>
 
 nnoremap <leader>tt :terminal<CR>
-nnoremap <leader>vt :vertical terminal<CR>
-nnoremap <leader>st :botright split +terminal<CR>
+nnoremap <leader>vt :topleft vsplit +terminal<CR>
+nnoremap <leader>st :topleft split +terminal<CR>
 
 " VimTeX config
 " TODO what is forward search? is this latex jargon?
