@@ -6,6 +6,7 @@ Neovim
 - [ ] navigate diagnostic messages
 - [ ] bullet mode in markdown
 - [ ] do I want <C-F> and <C-B> back? If so, need to change TMux leader + :NERDTreeFind cmd
+- [ ] tab auto-complete for :e is painful when you hit the directory you want and want new-tab
 
 Plugins
 -------
@@ -20,3 +21,8 @@ Plugins to write
 - [ ] treesitter-paredit.nvim
 - [ ] better code search from within vim
 - [ ] handins grading
+
+
+TMux
+====
+- [ ] a command that opens a pane/window directly into .config/ directory
