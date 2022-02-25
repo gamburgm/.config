@@ -1,6 +1,8 @@
 (
  (readline-input-history
   (
+   #"(make-hash-eq)"
+   #"(make-hash-eqv)"
    #"(letrec ([f (lambda (x) (if (h (g x)) (add1 x) (sub1 x)))]\n           [g (lambda (y) (let ([x 5]) (h 5) (if (zero? x) y (g (sub1 y)))))]\n           [h (lambda (z) #t)])\n    (f 5))"
    #"(letrec\n  )"
    #"letrec"
