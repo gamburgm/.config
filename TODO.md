@@ -7,6 +7,7 @@ Neovim
 - [x] do I want <C-F> and <C-B> back? If so, need to change TMux leader + :NERDTreeFind cmd
 - [ ] tab auto-complete for :e is painful when you hit the directory you want and want new-tab
 - [ ] need to decide on how I'm going to write and interact with notes (pandoc?) plus appropriate plugins
+- [ ] for grading purposes: sum up the numbers at the unchecked bullets
 
 Plugins
 -------
