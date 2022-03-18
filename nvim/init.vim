@@ -21,6 +21,8 @@ Plug '~/vim-racket'                 " For racket
 Plug 'neovim/nvim-lspconfig'        " For built-in NeoVim LSP client
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'lervag/vimtex'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-neorg/neorg'
 " Plug 'kovisoft/slimv'
 " Plug 'vim-scripts/paredit.vim'      " For working with Lisps
 
@@ -97,6 +99,7 @@ require'nvim-treesitter.configs'.setup {
     'tsx',
     'typescript',
     'vim',
+    'norg',
   },
   sync_install = false,
   highlight = {
