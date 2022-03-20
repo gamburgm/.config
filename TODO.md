@@ -8,6 +8,7 @@ Neovim
 - [ ] tab auto-complete for :e is painful when you hit the directory you want and want new-tab
 - [ ] need to decide on how I'm going to write and interact with notes (pandoc?) plus appropriate plugins
 - [ ] for grading purposes: sum up the numbers at the unchecked bullets
+- [ ] Get copy-paste to actually work...
 
 Plugins
 -------
