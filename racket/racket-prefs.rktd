@@ -1,6 +1,12 @@
 (
  (readline-input-history
   (
+   #"syntax->datum"
+   #"stx->datum"
+   #"false?"
+   #"t?"
+   #"(boolean? #t)"
+   #"(true? #t)"
    #"null"
    #"(empty? '())"
    #"(null? '())"
