@@ -107,6 +107,23 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+require('neorg').setup {
+  load = {
+    ['core.defaults'] = {},
+    ['core.norg.concealer'] = {},
+  }
+}
+
+local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
+
+parser_configs.norg = {
+  install_info = {
+    url = "https://github.com/vhyrro/tree-sitter-norg",
+    files = { "src/parser.c" },
+    branch = "main"
+  },
+}
 EOF
 
 set exrc				    " allow for directory-specific vimrc's

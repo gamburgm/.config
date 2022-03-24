@@ -9,6 +9,7 @@ Neovim
 - [ ] need to decide on how I'm going to write and interact with notes (pandoc?) plus appropriate plugins
 - [ ] for grading purposes: sum up the numbers at the unchecked bullets
 - [ ] Get copy-paste to actually work...
+- [ ] I should have a jump-to-definition command where I can type in the name of a function that should be defined in the same file and go there, something extremely lightweight (as alternative to search)
 
 Plugins
 -------
