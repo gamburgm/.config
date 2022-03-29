@@ -13,6 +13,7 @@
   - [ ] <ESC> should also :noh?
   - [ ] <C-E>, <C-D>, <C-F> -- should all leave the cursor on the same relative row
   - [ ] multi-cursor support for grab all instances of a pattern and making that shift, in a way that's more convenient than crazy s/ patterns
+  - [ ] center-cursor command (or center window on cursor?)
 
 * Plugins
   - [ ] vim-surround (tpope)
