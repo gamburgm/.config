@@ -12,6 +12,7 @@
   - [ ] There's a real issue with display_type in Typescript LSP: doesn't walk the daisy-chain to a meaningful type. It /shouldn't/ stop at imports, certainly.
   - [ ] <ESC> should also :noh?
   - [ ] <C-E>, <C-D>, <C-F> -- should all leave the cursor on the same relative row
+  - [ ] multi-cursor support for grab all instances of a pattern and making that shift, in a way that's more convenient than crazy s/ patterns
 
 * Plugins
   - [ ] vim-surround (tpope)
