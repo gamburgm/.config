@@ -10,6 +10,8 @@
   - [ ] Get copy-paste to actually work...
   - [ ] I should have a jump-to-definition command where I can type in the name of a function that should be defined in the same file and go there, something extremely lightweight (as alternative to search)
   - [ ] There's a real issue with display_type in Typescript LSP: doesn't walk the daisy-chain to a meaningful type. It /shouldn't/ stop at imports, certainly.
+  - [ ] <ESC> should also :noh?
+  - [ ] <C-E>, <C-D>, <C-F> -- should all leave the cursor on the same relative row
 
 * Plugins
   - [ ] vim-surround (tpope)
