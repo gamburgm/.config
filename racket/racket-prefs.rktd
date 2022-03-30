@@ -1,6 +1,10 @@
 (
  (readline-input-history
   (
+   #"(displayln x)"
+   #"(syntax->datum x)"
+   #"x"
+   #"(define x #'hello)"
    #"syntax->datum"
    #"stx->datum"
    #"false?"
