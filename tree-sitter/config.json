@@ -1,0 +1,56 @@
+{
+  "parser-directories": [
+    "/home/gamburgm/github",
+    "/home/gamburgm/src",
+    "/home/gamburgm/source"
+  ],
+  "theme": {
+    "function": 26,
+    "string": 28,
+    "keyword": 56,
+    "comment": {
+      "color": 245,
+      "italic": true
+    },
+    "property": 124,
+    "operator": {
+      "color": 239,
+      "bold": true
+    },
+    "string.special": 30,
+    "function.builtin": {
+      "color": 26,
+      "bold": true
+    },
+    "tag": 18,
+    "type.builtin": {
+      "bold": true,
+      "color": 23
+    },
+    "punctuation.bracket": 239,
+    "attribute": {
+      "color": 124,
+      "italic": true
+    },
+    "embedded": null,
+    "constant": 94,
+    "constant.builtin": {
+      "color": 94,
+      "bold": true
+    },
+    "module": 136,
+    "constructor": 136,
+    "number": {
+      "color": 94,
+      "bold": true
+    },
+    "punctuation.delimiter": 239,
+    "type": 23,
+    "variable.builtin": {
+      "bold": true
+    },
+    "variable.parameter": {
+      "underline": true
+    }
+  }
+}
