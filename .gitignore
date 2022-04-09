@@ -12,6 +12,7 @@ tmux/local.conf
 !bin/
 !racket/
 !neofetch/
+!tree-sitter/
 
 !README.md
 !TODO.norg
