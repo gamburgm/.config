@@ -180,6 +180,8 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>pv :PlugInstall<CR>
 nnoremap <leader>pc :PlugClean<CR>
 
+nnoremap <leader>; ,
+
 " set termguicolors and make compatible with tmux
 " if exists('+termguicolors')
 if has('termguicolors')
