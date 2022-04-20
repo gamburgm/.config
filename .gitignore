@@ -19,3 +19,5 @@ tmux/local.conf
 # very confused as to why bat/config needs to be especially 'unignored' -- same with other directories, really strange
 !bat/
 !bat/config
+
+!tree-sitter/config.json

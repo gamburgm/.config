@@ -58,8 +58,8 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<localleader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<localleader>d', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<localleader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<localleader>e', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<localleader>E', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<localleader>e', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<localleader>E', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 end
 
 local default_servers = { 'clangd', 'jedi_language_server', 'tsserver', 'eslint' }
@@ -180,6 +180,8 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>pv :PlugInstall<CR>
 nnoremap <leader>pc :PlugClean<CR>
 
+nnoremap <leader>; ,
+
 " set termguicolors and make compatible with tmux
 " if exists('+termguicolors')
 if has('termguicolors')
@@ -188,7 +190,7 @@ if has('termguicolors')
   set termguicolors
 endif
 
-set background=light    " dark colorscheme
+set background=dark     " dark colorscheme
 colorscheme solarized8  " solarized colorscheme
 
 set incsearch			" search as characters are entered
