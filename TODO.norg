@@ -14,6 +14,7 @@
   - [ ] <C-E>, <C-D>, <C-F> -- should all leave the cursor on the same relative row
   - [ ] multi-cursor support for grab all instances of a pattern and making that shift, in a way that's more convenient than crazy s/ patterns
   - [ ] center-cursor command (or center window on cursor?)
+  - [ ] for some reason, selecting a file in NERDTree never opens the selected buffer in a pane where a terminal buffer is open, even if my cursor originated from that pane
 
 * Plugins
   - [ ] vim-surround (tpope)

@@ -228,7 +228,7 @@ augroup END
 
 augroup asm
   autocmd!
-  autocmd BufNewFile,BufRead,BufWrite *.asm set filetype=asm
+  autocmd BufNewFile,BufRead,BufWrite *.s,*.asm set filetype=asm
 augroup END
 
 " would be cool to have an abbreviation that expands if to if..else..end in
