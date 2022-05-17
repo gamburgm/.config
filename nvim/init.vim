@@ -202,6 +202,9 @@ set smartcase     " ignore case if search pattern all lowercase, case-sensitive 
 nnoremap j gj
 nnoremap k gk
 
+" Search for a word
+nnoremap <leader>w /\<\><Left><Left>
+
 " allows backspace in insert mode to delete all characters
 " including tabs, eol, and where the cursor started
 " see :help 'backspace'
@@ -300,6 +303,8 @@ tnoremap <C-W> <Esc><C-W>
 nnoremap <leader>tt :terminal<CR>
 nnoremap <leader>vt :topleft vsplit +terminal<CR>
 nnoremap <leader>st :topleft split +terminal<CR>
+
+onoremap r :<C-U>normal! 0v$h<CR>
 
 " VimTeX config
 " TODO what is forward search? is this latex jargon?
