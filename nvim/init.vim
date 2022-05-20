@@ -62,7 +62,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<localleader>E', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 end
 
-local default_servers = { 'clangd', 'jedi_language_server', 'tsserver', 'eslint' }
+local default_servers = { 'clangd', 'jedi_language_server', 'tsserver', 'eslint', 'elmls' }
 for _, lsp in pairs(default_servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -102,6 +102,7 @@ require'nvim-treesitter.configs'.setup {
     'typescript',
     'vim',
     'norg',
+    'elm',
   },
   sync_install = false,
   highlight = {
