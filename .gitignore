@@ -1,11 +1,13 @@
 *
+tmux/local.tmux
 
 # things I want to keep
 !nvim/
+!nvim/plugin/
+!nvim/plugin/**/*
 nvim/autoload/
 
 !tmux/
-tmux/local.conf
 
 !alacritty/
 !latexmk/

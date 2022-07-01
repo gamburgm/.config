@@ -162,7 +162,7 @@ set noswapfile      " don't create backup swap files
 
 set updatetime=300  " shorter update time for VIM and plugins
 
-set shortmess+=c    " Don't pass messages to ins-completion-menu
+" set shortmess+=c    " Don't pass messages to ins-completion-menu
 set signcolumn=yes  " pre-load the column for coc warnings so that you don't have to redraw everything everytime
 
 noremap <C-N> :NERDTreeToggle<CR>
@@ -187,10 +187,12 @@ nnoremap <leader>; ,
 " LuaSnip config
 
 " <Tab> to expand or jump in snippet
-inoremap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
 
 " Shift-Tab to jump backwards
 inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<CR>
+
+nnoremap <leader><leader>s :source ~/.config/nvim/plugin/snippets.lua<CR>
 
 " TODO do I also want these in select mode?
 " TODO using choiceNodes
