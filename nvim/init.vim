@@ -23,6 +23,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'lervag/vimtex'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-neorg/neorg'
+Plug 'L3MON4D3/LuaSnip'             " Snippets
 " Plug 'kovisoft/slimv'
 " Plug 'vim-scripts/paredit.vim'      " For working with Lisps
 
@@ -182,6 +183,17 @@ nnoremap <leader>pv :PlugInstall<CR>
 nnoremap <leader>pc :PlugClean<CR>
 
 nnoremap <leader>; ,
+
+" LuaSnip config
+
+" <Tab> to expand or jump in snippet
+inoremap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+
+" Shift-Tab to jump backwards
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<CR>
+
+" TODO do I also want these in select mode?
+" TODO using choiceNodes
 
 " set termguicolors and make compatible with tmux
 " if exists('+termguicolors')
