@@ -35,6 +35,8 @@ ls.add_snippets("racket", {
     ls.parser.parse_snippet("dl", "(λ ($1) $0)"),
     ls.parser.parse_snippet("dp", "(define+provide ($1) $0)"),
 
-    -- just for mK testing
+    -- for mK
     s("mkpe", fmt(MKPE_SNIP, { i(1, ""), i(2, ""), i(3, ""), rep(2), rep(3) })),
+    ls.parser.parse_snippet("td", "(#%term-datum $0)"),
+    ls.parser.parse_snippet("lv", "(#%lv-ref $0)"),
 })
