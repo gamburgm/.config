@@ -33,7 +33,8 @@ ls.add_snippets("racket", {
     ls.parser.parse_snippet("d", "(define $1 $0)"),
     ls.parser.parse_snippet("df", "(define ($1)\n  $0)"),
     ls.parser.parse_snippet("dl", "(λ ($1) $0)"),
-    ls.parser.parse_snippet("dp", "(define+provide ($1) $0)"),
+    ls.parser.parse_snippet("dp", "(define+provide $0)"),
+    ls.parser.parse_snippet("dfp", "(define+provide ($1)\n  $0)"),
 
     -- for mK
     s("mkpe", fmt(MKPE_SNIP, { i(1, ""), i(2, ""), i(3, ""), rep(2), rep(3) })),
