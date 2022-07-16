@@ -192,6 +192,15 @@ imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-o
 " Shift-Tab to jump backwards
 inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<CR>
 
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<CR>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<CR>
+
+imap <silent><expr> <C-L> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-L>'
+imap <silent><expr> <C-L> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-L>'
+
+imap <silent><expr> <C-H> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-H>'
+smap <silent><expr> <C-H> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-H>'
+
 nnoremap <leader><leader>s :source ~/.config/nvim/plugin/snippets.lua<CR>
 
 " TODO do I also want these in select mode?
