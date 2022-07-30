@@ -74,7 +74,7 @@ ls.add_snippets("racket", {
     s("mkpe", fmt(MKPE_SNIP, { i(1, ""), i(2, ""), i(3, ""), rep(2), rep(3) })),
     ls.parser.parse_snippet("td", "(#%term-datum $0)"),
     ls.parser.parse_snippet("lv", "(#%lv-ref $0)"),
-    ls.parser.parse_snippet("str", "(struct $0 #:transparent)"),
+    ls.parser.parse_snippet("str", "(struct $1 ($0) #:transparent)"),
 })
 
 ls.add_snippets("markdown", {
