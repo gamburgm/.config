@@ -77,6 +77,12 @@ ls.add_snippets("racket", {
     ls.parser.parse_snippet("str", "(struct $1 ($0) #:transparent)"),
 })
 
+ls.add_snippets("javascript", {
+    ls.parser.parse_snippet("dl", "const $1 = ($2) => { $0 }"),
+    ls.parser.parse_snippet("ll", "($1) => { $0 }"),
+    ls.parser.parse_snippet("df", "(function $1($2) {\n\t$0\n}"),
+})
+
 ls.add_snippets("markdown", {
     s(
       "foob",
