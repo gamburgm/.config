@@ -78,6 +78,7 @@ ls.add_snippets("racket", {
 })
 
 ls.add_snippets("javascript", {
+    -- being able to switch on these to be able to switch between parens and no parens, curlies and not, etc.
     ls.parser.parse_snippet("dl", "const $1 = ($2) => { $0 }"),
     ls.parser.parse_snippet("ll", "($1) => { $0 }"),
     ls.parser.parse_snippet("df", "(function $1($2) {\n\t$0\n}"),
